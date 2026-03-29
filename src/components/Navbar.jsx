@@ -7,10 +7,12 @@ export default function Navbar() {
   const isHome = pathname === "/";
   const isArtifact = pathname === "/artifact";
   const isArtifact2 = pathname === "/artifact2";
+  const isArtifact3 = pathname === "/artifact3";
   const navItems = [
     { label: "home", href: "/", active: isHome, color: "#00d4ff", index: "01." },
     { label: "artifact", href: "/artifact", active: isArtifact, color: "#a855f7", index: "02." },
     { label: "artifact 2", href: "/artifact2", active: isArtifact2, color: "#ff79c6", index: "03." },
+    { label: "artifact 3", href: "/artifact3", active: isArtifact3, color: "#4ade80", index: "04." },
   ];
 
   useEffect(() => {

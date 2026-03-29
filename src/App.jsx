@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Artifact from "./pages/Artifact";
 import Artifact2 from "./pages/Artifact2";
+import Artifact3 from "./pages/Artifact3";
 
 export default function App() {
   return (
@@ -11,6 +12,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/artifact" element={<Artifact />} />
         <Route path="/artifact2" element={<Artifact2 />} />
+        <Route path="/artifact3" element={<Artifact3 />} />
       </Routes>
     </BrowserRouter>
   );
