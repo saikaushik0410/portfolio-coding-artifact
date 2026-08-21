@@ -174,6 +174,54 @@ const CHALLENGES = [
   },
 ];
 
+const ARTIFACT_INFO = [
+  {
+    key: "title",
+    icon: "📌",
+    color: "#00d4ff",
+    label: "Title",
+    q: "What is it?",
+    body:
+      "Multimodal AI Opportunity Assessment & Tool Evaluation — a strategy report and interactive infographic that plans how a marketing department, working alongside a Generative AI Engineer, should adopt multimodal AI.",
+  },
+  {
+    key: "objective",
+    icon: "🎯",
+    color: "#00ff87",
+    label: "Objective",
+    q: "Why did I create it?",
+    body:
+      "To assess where multimodal AI creates real value in marketing, define measurable success metrics, and evaluate enterprise generative-AI platforms against clear criteria to reach a defensible tooling recommendation. Produced for AIML 505: Large Language / Gen AI Models.",
+  },
+  {
+    key: "process",
+    icon: "⚙️",
+    color: "#a855f7",
+    label: "Process",
+    q: "How did I make it?",
+    body:
+      "I framed multimodal AI opportunities in marketing, brainstormed four high-value applications, defined business + operations KPIs, established six evaluation criteria, and benchmarked three enterprise platforms against them. I then designed a reference data pipeline, mapped the key engineering challenges, and synthesized a final verdict — drawing on vendor research from Google Cloud, IBM, Adobe and Microsoft.",
+  },
+  {
+    key: "tools",
+    icon: "🧰",
+    color: "#febc2e",
+    label: "Tools",
+    q: "What did I use?",
+    body:
+      "Platforms evaluated: Google Vertex AI / Gemini, Adobe Firefly Enterprise, and Azure OpenAI / AI Foundry. Built as a live interactive artifact with React, Vite, Tailwind CSS and Framer Motion, deployed on Vercel.",
+  },
+  {
+    key: "value",
+    icon: "💎",
+    color: "#ff79c6",
+    label: "Value Proposition",
+    q: "Why is it important?",
+    body:
+      "It demonstrates the ability to translate a business problem into an AI strategy: spotting multimodal opportunities, defining measurable outcomes, critically weighing enterprise platforms on effectiveness, cost and ethics, and communicating a clear recommendation. It reflects both technical competency in generative AI and the leadership to guide tooling decisions.",
+  },
+];
+
 /* ── Small helpers ─────────────────────────────────── */
 function pill(color) {
   return {
@@ -413,8 +461,46 @@ export default function Artifact() {
         </motion.div>
       </section>
 
-      {/* ── STEP ONE: OPPORTUNITIES ───────────────── */}
+      {/* ── ARTIFACT INFORMATION ──────────────────── */}
       <section style={{ maxWidth: 1200, margin: "0 auto", padding: "24px 2rem 20px" }}>
+        <SectionLabel>{"// ARTIFACT INFORMATION — SHOWING THE WORK"}</SectionLabel>
+        <div style={{ display: "grid", gap: 12 }}>
+          {ARTIFACT_INFO.map((info, i) => (
+            <motion.div
+              key={info.key}
+              initial={{ opacity: 0, x: -16 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.06, duration: 0.4 }}
+              className="card-hover"
+              style={{
+                display: "grid",
+                gridTemplateColumns: "minmax(0, 220px) 1fr",
+                gap: 20,
+                alignItems: "start",
+                background: "#0d0d0d",
+                border: `1px solid ${info.color}2e`,
+                borderRadius: 14,
+                padding: "20px 22px",
+              }}
+            >
+              <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+                <div style={{ fontSize: "1.5rem", lineHeight: 1 }}>{info.icon}</div>
+                <div>
+                  <div style={{ fontFamily: mono, fontSize: "0.98rem", fontWeight: 700, color: info.color }}>
+                    {info.label}
+                  </div>
+                  <div style={{ fontFamily: mono, fontSize: "0.68rem", color: "#475569", marginTop: 3 }}>{info.q}</div>
+                </div>
+              </div>
+              <p style={{ color: "#cbd5e1", lineHeight: 1.75, fontSize: "0.88rem", margin: 0 }}>{info.body}</p>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* ── STEP ONE: OPPORTUNITIES ───────────────── */}
+      <section style={{ maxWidth: 1200, margin: "0 auto", padding: "40px 2rem 20px" }}>
         <SectionLabel>{"// STEP ONE — MULTIMODAL AI OPPORTUNITIES IN MARKETING"}</SectionLabel>
         <p style={{ color: "#94a3b8", lineHeight: 1.8, fontSize: "0.92rem", maxWidth: 820, margin: "0 0 26px" }}>
           A single campaign encompasses a creative brief, product images, ad videos, influencer clips, reviews and
